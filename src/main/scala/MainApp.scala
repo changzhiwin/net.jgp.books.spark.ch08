@@ -15,9 +15,9 @@ object MainApp {
 
     println(s"=========== whichCase = $whichCase, otherArg = $otherArg ===========")
 
-    whichCase match {
+    whichCase.toUpperCase match {
       case "ES"      => ElasticsearchToDataset.run()
-      case "MYSQL"   => MySQLToDataset.run()
+      case "MYSQL"   => MySQLToDataset.run(otherArg)
       case _         => SQLiteToDataset.run()
     }
   }

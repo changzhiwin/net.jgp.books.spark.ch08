@@ -18,8 +18,7 @@ object ElasticsearchToDataset extends Basic{
 
     df.show(10)
     df.printSchema
-
-    println("---------------- The dataframe contains " + df.count() + " record(s).")
-    //println("The dataframe is split over " + df.rdd.getPartitions.length + " partition(s).")
+    println(s"The dataframe contains ${df.count()} record(s).")
+    println(s"The dataframe is split over ${df.rdd.getNumPartitions} partition(s).")
   }
 }

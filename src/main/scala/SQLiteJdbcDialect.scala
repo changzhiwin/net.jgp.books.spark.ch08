@@ -17,7 +17,11 @@ class  SQLiteJdbcDialect extends JdbcDialect{
 
     // you can implement your logic here
     typeName.toUpperCase match {
+      case "INTEGER" => Some(DataTypes.IntegerType)
+      case "NUMERIC" => Some(DataTypes.DoubleType)
+      case "REAL" => Some(DataTypes.FloatType)
       case "TEXT" => Some(DataTypes.StringType)
+      case "BLOB" => Some(DataTypes.BinaryType)
       case _      => None
     }
   }

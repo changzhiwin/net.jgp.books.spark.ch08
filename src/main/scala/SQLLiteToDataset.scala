@@ -12,12 +12,11 @@ object SQLiteToDataset extends Basic {
     val dialect = new SQLiteJdbcDialect()
     JdbcDialects.registerDialect(dialect)
 
-    // https://www.sqlite.org/cli.html
     val df = spark.read.
       format("jdbc").
       option("url", "jdbc:sqlite:./data/sqlite-db").
       option("driver", "org.sqlite.JDBC").
-      option("dbtable", "tb11").
+      option("dbtable", "t1").
       load()
 
     df.show(5)
