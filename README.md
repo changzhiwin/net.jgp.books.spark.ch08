@@ -18,7 +18,7 @@ mysql -uroot -p < /YOUR_PROJECT_PATH/data/sakila-schema.sql
 mysql -uroot -p < /YOUR_PROJECT_PATH/data/sakila-data.sql
 ```
 
-## 2, submit jar file, in project root dir
+## 3, submit jar file, in project root dir
 ```
 $ YOUR_SPARK_HOME/bin/spark-submit \
   --class net.jgp.books.spark.MainApp \
@@ -27,7 +27,7 @@ $ YOUR_SPARK_HOME/bin/spark-submit \
   target/scala-2.13/main-scala-ch8_2.13-1.0.jar SQLITE
 ```
 
-## 3, Print out
+## 4, Print out
 
 ### Case: mysql order
 ```
@@ -209,13 +209,13 @@ The dataframe contains 473039 record(s).
 The dataframe is split over 5 partition(s).
 ```
 
-## 4, Some diffcult case
+# Some diffcult case
 
-### Should use elasticsearch jar for scala 2.13, matching scala version
+## Should use elasticsearch jar for scala 2.13, matching scala version
 [elasticsearch-spark-30_2.13-8.2.2.jar](https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch-spark-30)
 > https://mvnrepository.com/  
 
-### Using remote node, should set this option
+## Using remote node, should set this option
 ```
 option("es.nodes.wan.only", "true")
 ```
